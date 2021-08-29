@@ -564,7 +564,7 @@ def textToPath(font_data, text, letter_spacing, line_height, scale_factor):
 
     for i, symbol in enumerate(text[:]):
 
-        symbol = htmlpar.unescape(symbol)
+        symbol = HTMLParser.unescape(symbol)
         # get the glyph definition from the file
         if symbol == '\n':
             text_width = 0
