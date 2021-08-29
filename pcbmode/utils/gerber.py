@@ -90,7 +90,7 @@ def gerberise(manufacturer='default'):
 
                 filename = os.path.join(base_dir, base_name + add)
      
-                with open(filename, "wb") as f:
+                with open(filename, "w") as f:
                     for line in gerber.getGerber():
                         f.write(line)
 
@@ -114,7 +114,7 @@ def gerberise(manufacturer='default'):
                           filename_info['other'][sheet].get('ext') or 'ger')
         filename = os.path.join(base_dir, base_name + add)
 
-        with open(filename, "wb") as f:
+        with open(filename, "w") as f:
             for line in gerber.getGerber(False):
                 f.write(line)
 
@@ -944,7 +944,7 @@ def gerbers_to_svg(manufacturer='default'):
     output_file = os.path.join(config.cfg['base-dir'], config.cfg['locations']['build'], cfg['board_name'] + '_gerber.svg')
 
     try:
-        f = open(output_file, 'wb')
+        f = open(output_file, 'w')
     except IOError as e:
         print("I/O error({0}): {1}".format(e.errno, e.strerror))
 
